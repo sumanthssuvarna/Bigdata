@@ -1,0 +1,12 @@
+# Here's a list of the ten Python string-related questions I provided earlier:
+
+# 1. Concatenate two strings together.
+# 2. Find the length (number of characters) of a string.
+# 3. Extract a portion of a string using slicing.
+# 4. Split a string into a list of substrings based on a delimiter.
+# 5. Remove leading and trailing whitespace (or specific characters) from a string.
+# 6. Convert a string to uppercase or lowercase.
+# 7. Replace occurrences of a substring within a string.
+# 8. Check if a substring exists within a string.
+# 9. Format strings using f-strings or the `.format()` method.
+# 10. Reverse a string.
