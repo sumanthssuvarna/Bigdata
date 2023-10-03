@@ -38,3 +38,23 @@ from departments d
 join employe e on e.DEPARTMENT_ID=d.DEPARTMENT_ID
 group by DEPARTMENT_NAME;
 
+-- 11.Getting unique column names
+select distinct(department) from employees order by department ;
+
+-- To get top results
+-- In oracle
+select distinct(department) from employees order by department FETCH FIRST 10 ROWS ONLY;
+-- In others
+select distinct(department) from employees order by department LIMIT 10;
+
+--Name aliasing
+select distinct(department) as "Department name" from employees order by department ;
+
+-- Between clause
+SELECT first_name, hire_date from employees where hire_date BETWEEN '02/07/2005' AND '03/20/2007';
+
+--between,and or
+select first_name,Gender, department 
+from employees 
+where ((department='Automotive' and gender='M') OR (department='Toys' AND gender='F'))
+AND salary between 40000 and 100000;
