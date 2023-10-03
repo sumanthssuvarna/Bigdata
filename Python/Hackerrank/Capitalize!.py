@@ -2,6 +2,8 @@
 
 # Sample Output:  Chris Alan
 
-def solve(s):
-    s=s.split(" ")
-    return(" ".join(i.capitalize() for i in s))
+s="sumanth s suvarna"
+s=s.split(" ")
+a=(i.capitalize() for i in s)
+b=" ".join(a)
+b

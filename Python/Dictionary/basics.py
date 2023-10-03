@@ -3,7 +3,7 @@
 # 24. How do you create an empty dictionary in Python?
 a={}
 
-# 25. What are the character istics of dictionary keys? 
+# 25. What are the characteristics of dictionary keys? 
 ##Its should be inique 
 
 # 26. How do you add a key-value pair to a dictionary?

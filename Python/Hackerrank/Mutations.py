@@ -4,12 +4,13 @@
 
 # You are given an immutable string, and you want to make changes to it.
 
-def mutate_string(string, position, character):
-    a=list(string)
-    a[position]=character
-    b="".join(a)
-    return(b)
-
+s="Aaaaaaa"
+t="b"
+p=2
+a=list(s)
+a[p]=t
+b="".join(a)
+b
 
 # o/p
 

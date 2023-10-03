@@ -5,17 +5,14 @@
 # Www.HackerRank.com → wWW.hACKERrANK.COM
 # Pythonist 2 → pYTHONIST 2  
 
-def swap_case(s):
-    b=""
-    for i in s:
-        if i.isupper():
-          b=b+i.lower()
-        else:
-          b=b+i.upper()
-    return(b)
+s="Sumanth"
 
-
-if __name__ == '__main__':
-    s = input()
-    result = swap_case(s)
-    print(result)
+s=list(s)
+a=[]
+for i in s:
+  if i.isupper():
+    a.append(i.lower())
+  else:
+    a.append(i.upper())
+a="".join(a)
+a

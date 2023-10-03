@@ -1,14 +1,15 @@
 a="A man, a plan, a canal, Panama"
-a=a.replace(" ","")
-a=a.replace(",","")
-b=a
-a=a.upper()
-b=b.upper()
-b=b[::-1]
-print(a)
-print(b)
+
+#make it lower case
+a=a.replace(" ","").replace(",","").lower()
+
+#Reverse it
+b=a[::-1]
+
+#Compare
 if a==b:
+#Output
   print("True")
-else: 
-  print("False")
+else:
+  print("Not a palindrome")
 
