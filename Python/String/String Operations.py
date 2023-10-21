@@ -25,6 +25,7 @@ print(splitt)
 
 # 5. Remove leading and trailing whitespace (or specific characters) from a string
 print(d) #Before strip
+d="ghdgsahg dsahghdas dsajh"
 space_rem=d.strip(" ")
 print(space_rem)
 
