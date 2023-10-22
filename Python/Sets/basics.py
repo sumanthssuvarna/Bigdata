@@ -17,8 +17,8 @@ a
 
 # 21. How do you perform set intersection and set union operations?
 b={7,8,9}
-a.intersection(b)
-a.union(b)
+a.intersection(b) #gives common between a and b
+a.union(b) # Gives all values of aand b
 
 # 22. Can sets contain other sets or mutable objects like lists?
 ##sets can only contain immutable objects as their elements. Immutable objects are objects whose values cannot be changed after they are created. 
