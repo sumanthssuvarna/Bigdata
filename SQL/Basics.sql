@@ -58,3 +58,41 @@ select first_name,Gender, department
 from employees 
 where ((department='Automotive' and gender='M') OR (department='Toys' AND gender='F'))
 AND salary between 40000 and 100000;
+
+--18. UPPER(), LOWER(), LENGTH(), TRIM() + Boolean Expressions & Concatenation
+SELECT UPPER(FIRST_NAME) FROM EMPLOYEES;
+SELECT LOWER(FIRST_NAME) FROM EMPLOYEES;
+SELECT LENGTH(FIRST_NAME) FROM EMPLOYEES;
+SELECT TRIM(BOTH ' ' FROM '          FIRST_NAME') FROM EMPLOYEES;
+SELECT FIRST_NAME || ' ' || LAST_NAME FROM EMPLOYEES; -- Concatenation in sql
+SELECT FIRST_NAME || ' ' || LAST_NAME as Full_name FROM EMPLOYEES;
+
+SELECT FIRST_NAME, CASE WHEN salary > 40000 THEN 'High' ELSE 'Low' END AS salary_status 
+FROM EMPLOYEES order by salary desc; -- too print boolean or case statments
+
+
+-- 20. String Functions: SUBSTRING(), REPLACE(), POSITION() and COALESCE()
+SELECT SUBSTR(column_name, start_position, length) FROM your_table;
+SELECT SUBSTR(first_name, 1, 3) FROM employees;
+
+SELECT REPLACE('Hello, World', 'Hello', 'Hi') FROM dual;
+
+SELECT INSTR('Hello, World', 'World') FROM dual; -- This returns 7 -- That is the position checking
+
+SELECT COALESCE(first_name, last_name, 'N/A') FROM employees; -- used to deal with null values
+-- If column1 contains a non-null value, that value will be returned.
+-- If column1 is null, it will check column2. If column2 contains a non-null value, that value will be returned.
+-- If both column1 and column2 are null, it will return the default value 'N/A'.
+
+-- Grouping Functions: MIN(), MAX(), AVG(), SUM(), COUNT()
+SELECT Min(salary) FROM employees;
+SELECT Max(salary) FROM employees;
+SELECT Avg(salary) FROM employees;
+SELECT round(avg(salary)) FROM employees;
+SELECT Sum(salary) FROM employees;
+SELECT Count(*) FROM employees;
+
+
+
+
+

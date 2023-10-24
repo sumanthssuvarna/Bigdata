@@ -95,3 +95,10 @@ print("".join(s))
 
 
 # Output: prectica
+
+
+S = "i.like.this.program.very.much"
+
+print(".".join([i for i in reversed(S.split("."))]))
+
+# Output: much.very.program.this.like.i
