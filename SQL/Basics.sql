@@ -1,16 +1,9 @@
--- Here are the questions I provided for your practice:
-
--- 1. Basic SELECT Statement: Retrieve all columns from the "employees" table.
-SELECT * FROM employe;
 
 -- 2. Filtering Data: Retrieve the names of all employees who have a salary greater than $50,000 from the "employees" table.
 SELECT * FROM employe where salary>55000;
 
 -- 3. Sorting Data: Retrieve the names and hire dates of employees in ascending order of hire date from the "employees" table.
 select EMPLOYEE_NAME as Name, HIRE_DATE as Hired_on from employe order by HIRE_DATE asc;
-
--- 4. Aggregate Functions: Calculate the average salary of all employees in the "employees" table.
-select avg(salary) from employe;
 
 -- 5. Joins: Retrieve the names of employees and the names of their respective departments from the "employees" and "departments" tables. Use a JOIN statement.
 select e.EMPLOYEE_NAME, d.DEPARTMENT_NAME 
