@@ -12,3 +12,9 @@ df1.show()
 my_reg=r'^(\S+)\s(\S+)\t(\S+),(\S+),(\S+)$'
 df2=df1.select(regexp_extract('Value',my_reg,1).alias("Name"),regexp_extract('Value',my_reg,2).alias("age"),regexp_extract('Value',my_reg,3).alias("loc"),regexp_extract('Value',my_reg,4).alias("distance"),regexp_extract('Value',my_reg,5).alias("location"))
 df2.show()
+
+    # Sample data
+    # sumit 30	bangalorekapil,32,hyderabad
+    # sathish 16	chennai,32,hyderabad
+    # ravi 39	bangalore,32,hyderabad
+    # kavita 12	hyderabadkavya,19,mysore
