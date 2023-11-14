@@ -1,22 +1,3 @@
-# Copyright 2017 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-"""`data_ingestion.py` is a Dataflow pipeline which reads a file and writes its
-contents to a BigQuery table.
-This example does not do any transformation on the data.
-"""
-
-
 import argparse
 import logging
 import re
@@ -25,49 +6,18 @@ from apache_beam.options.pipeline_options import PipelineOptions
 
 
 class DataIngestion:
-    """A helper class which contains the logic to translate the file into
-    a format BigQuery will accept."""
     def parse_method(self, string_input):
-        """This method translates a single line of comma separated values to a
-        dictionary which can be loaded into BigQuery.
-
-        Args:
-            string_input: A comma separated list of values in the form of
-                state_abbreviation,gender,year,name,count_of_babies,dataset_created_date
-                Example string_input: KS,F,1923,Dorothy,654,11/28/2016
-
-        Returns:
-            A dict mapping BigQuery column names as keys to the corresponding value
-            parsed from string_input. In this example, the data is not transformed, and
-            remains in the same format as the CSV.
-            example output:
-            {
-                'state': 'KS',
-                'gender': 'F',
-                'year': '1923',
-                'name': 'Dorothy',
-                'number': '654',
-                'created_date': '11/28/2016'
-            }
-         """
-        # Strip out carriage return, newline and quote characters.
         values = re.split(",",
                           re.sub('\r\n', '', re.sub('"', '', string_input)))
         row = dict(
-            zip(('state', 'gender', 'year', 'name', 'number', 'created_date'),
+            zip(('Date','Description','Category','Cost','Currency','Alson J Dsouza','Ajith shetty','Sanith','Shivashankar','Sumanth Suvarna','Akshay Prabhu','Karthik'),
                 values))
         return row
 
 
 def run(argv=None):
-    """The main function which creates the pipeline and runs it."""
 
     parser = argparse.ArgumentParser()
-
-    # Here we add some specific command line arguments we expect.
-    # Specifically we have the input file to read and the output table to write.
-    # This is the final stage of the pipeline, where we define the destination
-    # of the data. In this case we are writing to BigQuery.
     parser.add_argument(
         '--input',
         dest='input',
@@ -76,7 +26,7 @@ def run(argv=None):
         'a file in a Google Storage Bucket.',
         # This example file contains a total of only 10 lines.
         # Useful for developing on a small set of data.
-        default='gs://spls/gsp290/data_files/head_usa_names.csv')
+        default='gs://qwiklabs-gcp-01-7de46431b095/data_files/splitwise_transformed.csv.csv')
 
     # This defaults to the lake dataset in your BigQuery project. You'll have
     # to create the lake dataset yourself using this command:
@@ -85,7 +35,7 @@ def run(argv=None):
                         dest='output',
                         required=False,
                         help='Output BQ table to write results to.',
-                        default='lake.usa_names')
+                        default='splitwise.room_spend')
 
     # Parse arguments from the command line.
     known_args, pipeline_args = parser.parse_known_args(argv)
@@ -120,8 +70,7 @@ def run(argv=None):
              known_args.output,
              # Here we use the simplest way of defining a schema:
              # fieldName:fieldType
-             schema='state:STRING,gender:STRING,year:STRING,name:STRING,'
-             'number:STRING,created_date:STRING',
+             schema='Date:STRING,Description:STRING,Category:STRING,Cost:STRING,Currency:STRING,Alson J Dsouza:STRING,Ajith shetty:STRING,Sanith:STRING,Shivashankar:STRING,Sumanth Suvarna:STRING,Akshay Prabhu:STRING,Karthik:STRING',
              # Creates the table in BigQuery if it does not yet exist.
              create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
              # Deletes all data in the BigQuery table before writing.
