@@ -1,0 +1,84 @@
+
+Given a string, find the longest substring without repeating characters.
+Given a string, determine if it is a palindrome.
+Given a string, reverse it without using any built-in functions.
+Given a string, find the index of the first unique character.
+Given a string, find the index of the first non-repeating character.
+Given a string, find the longest common substring between two strings.
+Given a string, find the number of vowels and consonants in the string.
+Given a string, find the number of words in the string.
+Given a string, find the longest word in the string.
+Given a string, find the shortest word in the string.
+Given a string, find the most frequently occurring word in the string.
+Given a string, find the number of uppercase and lowercase letters in the string.
+Given a string, find the number of digits and special characters in the string.
+Given a string, find the number of spaces in the string.
+Given a string, find the number of lines in the string.
+
+
+  Longest Substring Without Repeating Characters:
+
+Input: "abcabcbb"
+Output: "abc"
+Palindrome Check:
+
+Input: "radar"
+Output: True
+Reverse String:
+
+Input: "Hello, World!"
+Output: "!dlroW ,olleH"
+First Unique Character:
+
+Input: "leetcode"
+Output: 0 # (The first unique character is 'l' at index 0)
+First Non-Repeating Character:
+
+Input: "leetcode"
+Output: 0 # (The first non-repeating character is 'l' at index 0)
+Longest Common Substring:
+
+Input: "abcdef", "acbcf"
+Output: "bc"
+Count Vowels and Consonants:
+
+Input: "Hello, World!"
+Output: Vowels: 4, Consonants: 7
+Count Words:
+
+Input: "This is a sample sentence."
+Output: 5
+Longest Word:
+
+Input: "The quick brown fox"
+Output: "quick"
+Shortest Word:
+
+Input: "The quick brown fox"
+Output: "fox"
+Most Frequently Occurring Word:
+
+Input: "The quick brown fox jumps over the lazy dog. The dog barks loudly."
+Output: "the" # (occurs most frequently)
+Count Uppercase and Lowercase Letters:
+
+Input: "Hello, World!"
+Output: Uppercase: 2, Lowercase: 8
+Count Digits and Special Characters:
+
+Input: "Hello, 123!"
+Output: Digits: 3, Special Characters: 3
+Count Spaces:
+
+Input: "This is a sample sentence."
+Output: 5
+Count Lines:
+
+Input:
+mathematica
+Copy code
+Line 1
+Line 2
+Line 3
+Output: 3
+Feel free to start with any of these problems, and I'll be here to help if you have questions or need guidance!
