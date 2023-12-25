@@ -1,0 +1,30 @@
+# Explore slicing
+
+li = [10,20,30,40,50,60]
+
+# Index always moves from left to right if third parameter is positive or not mentioned
+
+print(li[2:]) # Here 2 is included (inclusive)
+print(li[:2]) # Here 2 is not included (exclusive)
+
+print(li[-2:]) # Here -2 is included (inclusive)
+print(li[:-2]) # Here -2 is not included (exclusive)
+
+# Index always moves from right to left if third parameter is negative 
+
+print(li[2::-1]) # Here 2 is included (inclusive)
+print(li[:2:-1]) # Here 2 is not included (exclusive)
+
+print(li[-2::-1]) # Here -2 is included (inclusive)
+print(li[:-2:-1]) # Here -2 is not included (exclusive)
+
+
+ 'O/P
+[30, 40, 50, 60]
+[10, 20]
+[50, 60]
+[10, 20, 30, 40]
+[30, 20, 10]
+[60, 50, 40]
+[50, 40, 30, 20, 10]
+[60]
